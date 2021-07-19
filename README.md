@@ -73,4 +73,4 @@ java.lang.ClassCastException: class clojure.lang.Symbol cannot be cast to class 
 
 From previous logs, the error happens at `2021-07-19T02:49:03.836Z WFERREIR-M-D2BB INFO [clojure-lsp.crawler:250] - Automatically resolved source-paths from project.clj: #{"feature" unquote get-path "lib" "test" "src/test/clojure"}`
 
-Because `:source-paths` in `project.clj` is using a function to produce the desired vector of strings, but `clojure-lsp` is returning symbols too.
+Because `:source-paths` in `project.clj` is using a function to produce the desired vector of strings, but `clojure-lsp` is returning symbols too? At first glance, the dynamic call was not made. The expected result would be `["lib/feature/src"]`
